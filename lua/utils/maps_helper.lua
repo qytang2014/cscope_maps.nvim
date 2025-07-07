@@ -60,7 +60,7 @@ M.default_keymaps = function(prefix)
 	local sym_map = M.sym_map
 	local ok, wk = pcall(require, "which-key")
 	if ok then
-		wk.register({ [prefix] = { name = "+cscope" } })
+    wk.add({ prefix, group = "cscope" })
 	end
 	map("n", prefix .. "s", M.get_cscope_prompt_cmd("s", "w"), { desc = sym_map.s })
 	map("n", prefix .. "g", M.get_cscope_prompt_cmd("g", "w"), { desc = sym_map.g })
